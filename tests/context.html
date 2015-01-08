@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CowML Examples | Parse Context</title>
+        <script type="text/javascript" src="../src/cowml.js"></script>
+        <script type="application/json" data-type="cowmlx">
+            {
+                "options" : {
+                    "context" : "#container"
+                },
+                "schema" : {
+                    "cow" : {
+                        "type"          : "div",
+                        "attributes"    : {
+                            "onclick"       : "alert('Clicked a cow')"
+                        },
+                        "css"           : {
+                            "display"       : "inline-block",
+                            "border"        : "#000000 solid 4px",
+                            "background"    : "#ffffff",
+                            "padding"       : "8px",
+                            "margin"        : "0 12px",
+                            "text-align"    : "left"
+                        }
+                    }
+                }
+            }
+        </script>
+        <style type="text/css">
+            .col-left {
+                float: left;
+                width: 40%;
+                text-align: right;
+            }
+            .col-right {
+                float: right;
+                width: 40%;
+                text-align: left;
+            }
+            #container {
+                display: inline-block;
+                padding: 8px;
+                border: #777777 dashed 1px;
+            }
+        </style>
+    </head>
+    <body bgcolor="#f0f0f0">
+        <h1>Example: Parse Context</h1>
+        <hr />
+        <p>By setting <code>options.context</code>, you can confine parsing to a target area.</p>
+        <p>The dashed line represents the parsing context.</p>
+        <div class="col-left">
+            <cow>I'm a cow!</cow>
+        </div>
+        <div class="col-right">
+            <div id="container">
+                <cow>I'm a cow!</cow>
+            </div>
+        </div>
+    </body>
+</html>
