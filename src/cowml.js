@@ -106,7 +106,7 @@ var CowML = {
         }
 
         // Setup the calf delivery room
-        var barn = document.createElement('div')
+        var barn = document.createElement('div'),
             mode = this.dna.options.mode;
 
         // Inseminate
