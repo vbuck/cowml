@@ -71,7 +71,7 @@ var CowML = {
         var dna = document.querySelectorAll('script[data-type="cowmlx"]');
 
         for (var i = 0; i < dna.length; i++) {
-            this.dna = this.extend(this.dna, JSON.parse(dna[i].innerText));
+            this.dna = this.extend(this.dna, JSON.parse(dna[i].text));
         }
 
         this.getContext().innerHTML = this.parse(this.getContext());
