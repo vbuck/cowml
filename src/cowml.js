@@ -59,7 +59,7 @@ var CowML = {
      * @return void
      */
     initialize: function() {
-        this.onReady(this.load.bind(this));
+        this.onReady(this.load);
     },
 
     /**
@@ -71,10 +71,10 @@ var CowML = {
         var dna = document.querySelectorAll('script[data-type="cowmlx"]');
 
         for (var i = 0; i < dna.length; i++) {
-            this.dna = this.extend(this.dna, JSON.parse(dna[i].text));
+            CowML.dna = CowML.extend(CowML.dna, JSON.parse(dna[i].text));
         }
-
-        this.getContext().innerHTML = this.parse(this.getContext());
+        var context = CowML.getContext();  // markup context
+        context.innerHTML = CowML.parse(context);
 
         return this;
     },
