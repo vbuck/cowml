@@ -1,0 +1,30 @@
+{
+    "schema" : {
+        "cow" : {
+            "type"          : "div",
+            "attributes"    : {
+                "onclick"       : "alert('Clicked a cow')"
+            },
+            "css"           : {
+                "display"       : "inline-block",
+                "border"        : "#000000 solid 4px",
+                "background"    : "#ffffff",
+                "padding"       : "8px",
+                "margin"        : "0 12px"
+            }
+        },
+        "calf" : {
+            "type"          : "div",
+            "attributes"    : {
+                "onclick"       : "alert('Clicked a calf')"
+            },
+            "css"           : {
+                "border"        : "#401111 solid 2px",
+                "background"    : "#481212",
+                "padding"       : "3px",
+                "margin"        : "8px",
+                "color"         : "#ffffff"
+            }
+        }
+    }
+}
