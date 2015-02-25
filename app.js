@@ -1,16 +1,36 @@
-var config 	= require('./config.js');
-var Browser = require('zombie');
-var fs 		= require('fs');
+var settings	= require('./config.js');  	// config file
+var Browser 	= require('zombie');
+var fs 			= require('fs');			// file system
 
-settings 	= config.options;
+var files = settings.fileNames;
+var numberOfFiles = files.length;
+var i = 0
 
-function writeFile(html)
+function writeFile(html, fileName)
 {
-	fs.writeFile(__dirname + '/' + settings.destination, html, function(err) {
-		console.log('CowML compilation complete');
+	fs.writeFile(__dirname + '/tests/' + fileName + '.html', html, function(err) {
+		if (err != null)
+		{
+			console.log(err);
+			return; // exit if there's an error
+		}
+		console.log('CowML compilation complete: ' + fileName);
+		i++;
+		parseFile()
+	});
+};
+
+function parseFile()
+{
+	if (i == numberOfFiles)
+		return;
+
+	var fileName = settings.fileNames[i]
+	var url = settings.url + fileName + '.cowml';
+
+	Browser.visit(url, function(e, browser) {
+		writeFile(browser.html(), fileName);
 	});
 }
 
-Browser.visit(settings.source, function(e, browser) {
-	writeFile(browser.html());
-});
+parseFile();

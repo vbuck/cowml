@@ -1,8 +1,11 @@
 <html><head>
-        <title>CowML Examples | Basic Usage</title>
-        <script type="text/javascript" src="../../src/cowml.js"></script>
+        <title>CowML Examples | Parse Mode</title>
+        <script type="text/javascript" src="../src/cowml.js"></script>
         <script type="application/json" data-type="cowmlx">
             {
+                "options" : {
+                    "mode" : "update"
+                },
                 "schema" : {
                     "cow" : {
                         "type"          : "div",
@@ -16,16 +19,18 @@
                             "padding"       : "8px",
                             "margin"        : "0 12px"
                         }
-                    },
-                    "calf" : {
-                        "type"          : "div",
-                        "attributes"    : {
-                            "onclick"       : "alert('Clicked a calf')"
-                        },
-                        "css"           : {
-                            "border"        : "#401111 solid 2px",
-                            "background"    : "#481212",
-                            "padding"       : "3px",
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body bgcolor="#f0f0f0">
+        <h1>Example: Parse Mode</h1>
+        <hr>
+        <p>By setting <code>options.mode</code> to <code>update</code> the original tag name will be preserved (<code>cow</code>).</p>
+        <cow>I'm a cow!</cow>
+    
+</body></html>            "padding"       : "3px",
                             "margin"        : "8px",
                             "color"         : "#ffffff"
                         }
@@ -38,7 +43,35 @@
         <h1>Example: Basic Usage</h1>
         <hr>
         <p>View the source to see the markup.</p>
-        
+        @Html.BeginForm("action", "controller") {
+            <input type="email">
+            <input type="password">
+            <button>login</button>
+        }
+
+        @Html.ActionLink("action", "controller")
+        <!--?php 
+            include 'db.php'; 
+            // Change $color1 and Color2 to your preference 
+            $color1 = '#FF0000'; 
+            $color2 = '#FFF000'; 
+            // Make your query 
+            $sql = mysql_query("SELECT * FROM tableName LIMIT 8"); 
+            $i = 0; 
+            echo '<table-->'; 
+            // Check to see if any results were returned 
+            if(mysql_num_rows($sql) &gt; 0){ 
+                // Loop through the results 
+                while($row = mysql_fetch_array($sql)){ 
+                    $color = ($i%2) ? $color1 : $color2; 
+                    echo ''. $row['name'] .''; 
+                    $i++; 
+                } 
+            }else{ 
+                echo 'No Results Found'; 
+            } 
+            echo ''; 
+        ?&gt;
         <div onclick="alert('Clicked a cow')" style="display: inline-block; border: 4px solid #000000; background: rgb(255, 255, 255); padding: 8px; margin: 0 12px;">
             <div onclick="alert('Clicked a calf')" style="border: 2px solid #401111; background: rgb(72, 18, 18); padding: 3px; margin: 8px; color: rgb(255, 255, 255);">This calf is a child of cow.</div>
             <div onclick="alert('Clicked a calf')" style="border: 2px solid #401111; background: rgb(72, 18, 18); padding: 3px; margin: 8px; color: rgb(255, 255, 255);">This calf is a child of cow.</div>

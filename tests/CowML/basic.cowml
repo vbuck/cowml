@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>CowML Examples | Basic Usage</title>
-        <script type="text/javascript" src="../src/cowml.js"></script>
+        <script type="text/javascript" src="../../src/cowml.js"></script>
         <script type="application/json" data-type="cowmlx">
             {
                 "schema" : {
@@ -40,6 +40,7 @@
         <h1>Example: Basic Usage</h1>
         <hr />
         <p>View the source to see the markup.</p>
+        
         <cow>
             <calf>This calf is a child of cow.</calf>
             <calf>This calf is a child of cow.</calf>

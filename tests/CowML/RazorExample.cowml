@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CowML Examples | Basic Usage</title>
+        <script type="text/javascript" src="../../src/cowml.js"></script>
+        <script type="application/json" data-type="cowmlx">
+            {
+                "schema" : {
+                    "cow" : {
+                        "type"          : "div",
+                        "attributes"    : {
+                            "onclick"       : "alert('Clicked a cow')"
+                        },
+                        "css"           : {
+                            "display"       : "inline-block",
+                            "border"        : "#000000 solid 4px",
+                            "background"    : "#ffffff",
+                            "padding"       : "8px",
+                            "margin"        : "0 12px"
+                        }
+                    },
+                    "calf" : {
+                        "type"          : "div",
+                        "attributes"    : {
+                            "onclick"       : "alert('Clicked a calf')"
+                        },
+                        "css"           : {
+                            "border"        : "#401111 solid 2px",
+                            "background"    : "#481212",
+                            "padding"       : "3px",
+                            "margin"        : "8px",
+                            "color"         : "#ffffff"
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body bgcolor="#f0f0f0">
+        <h1>Example using MVC.NET Razor</h1>
+        <hr />
+        <p>View the source to see the markup.</p>
+        <p>CowML can precompile from a cowml page to a .cshtml and the Razor remains unaffected by the compiling.</p>
+        @using (Html.BeginForm()) {
+            <input type="email" />
+            <input type="password" />
+            <button>login</button>
+        }
+
+        @Html.ActionLink("Click Me", "Index", "Home")
+
+        <cow>
+            <calf>This calf is a child of cow.</calf>
+            <calf>This calf is a child of cow.</calf>
+            <calf>This calf is a child of cow.</calf>
+            <calf>This calf is a child of cow.</calf>
+            <calf>This calf is a child of cow.</calf>
+            <calf>This calf is a child of cow.</calf>
+        </cow>
+    </body>
+</html>

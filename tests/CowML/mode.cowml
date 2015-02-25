@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CowML Examples | Parse Mode</title>
+        <script type="text/javascript" src="../src/cowml.js"></script>
+        <script type="application/json" data-type="cowmlx">
+            {
+                "options" : {
+                    "mode" : "update"
+                },
+                "schema" : {
+                    "cow" : {
+                        "type"          : "div",
+                        "attributes"    : {
+                            "onclick"       : "alert('Clicked a cow')"
+                        },
+                        "css"           : {
+                            "display"       : "inline-block",
+                            "border"        : "#000000 solid 4px",
+                            "background"    : "#ffffff",
+                            "padding"       : "8px",
+                            "margin"        : "0 12px"
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body bgcolor="#f0f0f0">
+        <h1>Example: Parse Mode</h1>
+        <hr />
+        <p>By setting <code>options.mode</code> to <code>update</code> the original tag name will be preserved (<code>cow</code>).</p>
+        <cow>I'm a cow!</cow>
+    </body>
+</html>
